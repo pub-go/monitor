@@ -113,7 +113,7 @@ func NewClient(opts ...Opt) *client {
 // 满足 `^[a-zA-Z_:][a-zA-Z0-9_:]*$` 的直接返回,
 // 否则会进行转义: `U__` 开头, 不在上述范围的字符转义为 `_unicode_` 编码.
 func EscapeName(s string) string {
-	return model.EscapeName(s, model.NameEscapingScheme)
+	return model.EscapeName(s, model.ValueEncodingEscaping)
 }
 
 type Opt func(*client)
